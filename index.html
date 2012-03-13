@@ -4,16 +4,56 @@
   <head>
     <title>jewel diver</title>
     <style type="text/css">
-      html, body
+      *
       {
         margin: 0;
         padding: 0;
       }
+      div.button
+      {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 600px;
+        height: 600px;
+      }
+      div.button a
+      {
+        background-image:url('media/start-button.png');
+        background-position: -336px 0;
+        background-repeat: no-repeat;
+        display: block;
+        margin: 0 auto;
+        margin-top: 40%;
+        width: 168px;
+        height: 88px;
+      }
+      div.button a:hover
+      {
+        background-position: -168px 0;
+      }
+      div.button a:active
+      {
+        background-position: 0 0;
+      }
     </style>
     <script type="text/javascript" src="lib/impact/impact.js"></script>
     <script type="text/javascript" src="lib/game/main.js"></script>
+    <script type="text/javascript">
+      function on_click(e)
+      {
+        ig.game.start();
+        e.parentNode.style.display = "none";
+      }
+
+      function on_correct_answer()
+      {
+          console.log("correct");
+      }
+    </script>
   </head>
   <body>
     <canvas id="canvas"></canvas>
+    <div class="button"><a onclick="on_click(this)"></a></div>
   </body>
 </html>
