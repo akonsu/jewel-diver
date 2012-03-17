@@ -41,16 +41,9 @@
     <script type="text/javascript" src="lib/game/main.js"></script>
     <script type="text/javascript">
       function on_click(e) {
-        ig.game.start();
-        e.parentNode.style.display = "none";
-      }
-
-      function on_correct_answer() {
-          console.log("correct");
-      }
-
-      function on_wrong_answer() {
-          console.log("wrong");
+          ig.game.start();
+          ig.game.start_button = e.parentNode;
+          e.parentNode.style.display = "none";
       }
     </script>
   </head>
